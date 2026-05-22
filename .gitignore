@@ -1,0 +1,77 @@
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# WhatsApp Authentication
+.wwebjs_auth/
+.wwebjs_cache/
+
+# Database files
+database.db
+database.db-shm
+database.db-wal
+*.db
+*.db-shm
+*.db-wal
+
+# Backup files
+backup_*.db
+*.backup
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+logs/
+*.log
+lerna-debug.log
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory
+coverage/
+.nyc_output/
+
+# Production build
+dist/
+build/
+out/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.history/
+
+# Testing
+.mocha-junit-reporter.json
+test-results/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# System
+.env.production.local
+config/database.yml
