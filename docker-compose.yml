@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  whatsapp-bot:
+    build: .
+    container_name: whatsapp-bot
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - ADMIN_NUMBER=${ADMIN_NUMBER}
+      - PORT=3000
+      - NODE_ENV=production
+      - DB_PATH=/app/data/database.db
+    volumes:
+      - bot-data:/app/data
+      - bot-auth:/app/.wwebjs_auth
+    networks:
+      - whatsapp-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  bot-data:
+    driver: local
+  bot-auth:
+    driver: local
+
+networks:
+  whatsapp-network:
+    driver: bridge
